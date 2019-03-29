@@ -32,9 +32,9 @@ class PostsController < ApplicationController
   # end
 
   def post_data
-    post = Post.find(params[:id])
-    render json: post.to_json
-  end
+      post = Post.find(params[:id])
+      render json: post.to_json(include: :author)
+    end
 
 private
   # Use callbacks to share common setup or constraints between actions.
